@@ -23,3 +23,15 @@ resource "azurerm_resource_group" "alz_simulation" {
     Project     = "BobDevBox"
   }
 }
+
+resource "azurerm_resource_group" "shared" {
+  name     = "rg-bobdevbox-shared"
+  location = var.location
+
+  tags = {
+    Environment = "simulation"
+    ManagedBy   = "Terraform"
+    Project     = "BobDevBox"
+    Purpose     = "Shared resources"
+  }
+}
